@@ -96,7 +96,7 @@ body{
 
 .pic{
     position: absolute;
-    left: 250px;
+    
     width: 1200px;
     height: 500px;
     background: white;
@@ -106,7 +106,7 @@ body{
 .left{
     position: absolute;
     top: 560px;
-    left: 250px;
+    
     width: 750px;
     height: auto;
     background: black;
@@ -154,7 +154,7 @@ body{
 .right{
     position: absolute;
     top: 560px;
-    left: 1000px;
+    left: 750px;
     width: 450px;
     height: auto;
     background: black;
@@ -193,4 +193,19 @@ body{
 }
 .do a:hover{
     text-decoration: underline;
+}
+
+#main{
+    position: absolute;
+    top: 60px;
+    left: 250px;
+    width: 1200px;
+    border: 1px;
+    background-color: white;
+}
+#main h1,h2,p{
+    padding-left: 5px;
+}
+#main h1{
+    text-align: center;
 }
