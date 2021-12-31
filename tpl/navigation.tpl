@@ -4,8 +4,8 @@
 						</li>
 					</ul>
 					<ul class="daohang">
-						<li><a href="./index.html">首页</a></li>
-						<li><a href="./major.html">资讯</a></li>
+						<li><a href="#/index">首页</a></li>
+						<li><a href="#/manager">资讯</a></li>
 						<li><a href="./people.html">品牌</a></li>
 						<li><a href="./article.html">计算器</a></li>
 						<li><a href="./article.html">车型</a></li>
