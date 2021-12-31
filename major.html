@@ -5,6 +5,12 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<title>资讯</title>
 			<link rel="stylesheet" type="text/css" href="./css/major.css">
+	    <script type="text/javascript" src="js/jquery.js"></script>    
+	    <script type="text/javascript" src='js/ejs.js'></script>
+	    <script type="text/javascript" src='js/director.js'></script>
+	    <script type="text/javascript" src='js/main.js'></script>
+	    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="./css/table.css">
 		</head>
 		<body>
 			<div class="logo">
@@ -29,52 +35,27 @@
 					</ul>
 				</div>
 				<div class="main">
-					<h1>资讯</h1>
-					<div class="news">
-						<div>
-							<a href=""><img src="./img/jelly.jpg" style="float:left" height="198em" width="317em"></a>
-						</div>
-						<div>
-							<a href=""><h4>标题在这里</h4></a>
-							<p>正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 </p>
-						</div>
-					</div>
-					<div class="news">
-						<div>
-							<a href=""><img src="./img/jelly.jpg" style="float:left" height="198em" width="317em"></a>
-						</div>
-						<div>
-							<a href=""><h4>标题在这里</h4></a>
-							<p>正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 </p>
-						</div>
-					</div>
-					<div class="news">
-						<div>
-							<a href=""><img src="./img/jelly.jpg" style="float:left" height="198em" width="317em"></a>
-						</div>
-						<div>
-							<a href=""><h4>标题在这里</h4></a>
-							<p>正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 </p>
-						</div>
-					</div>
-					<div class="news">
-						<div>
-							<a href=""><img src="./img/jelly.jpg" style="float:left" height="198em" width="317em"></a>
-						</div>
-						<div>
-							<a href=""><h4>标题在这里</h4></a>
-							<p>正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 </p>
-						</div>
-					</div>
-					<div class="news">
-						<div>
-							<a href=""><img src="./img/jelly.jpg" style="float:left" height="198em" width="317em"></a>
-						</div>
-						<div>
-							<a href=""><h4>标题在这里</h4></a>
-							<p>正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 正文在这里 </p>
-						</div>
-					</div>
+<div class="raw">
+            <div class="tablebody">
+                <div class="card">
+                    <h1 class="index_bt">车型列表</h1>
+                    <table class="fund_table">
+                        <thead>
+                            <tr>
+                                <th><a href="#d">车型名称</a></th>
+                                <th>品牌</th>
+                                <th>种类</th>
+                                <th>简介</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbmanager">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <script src="scripts/createtable_manager.js"></script>
+        </div>
 				</div>
 			</div>
 		</body>

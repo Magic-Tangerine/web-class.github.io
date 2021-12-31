@@ -10,8 +10,6 @@ html,body{
         }
 
 body{
-    background-image: url('../img/zhongzi.jpg');
-    background-repeat:repeat;/*背景重复*/
     background-attachment:fixed;/*固定背景*/
     overflow-x:hidden;/*隐藏左右滚动条*/
 }
