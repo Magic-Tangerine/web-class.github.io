@@ -10,6 +10,8 @@ html,body{
         }
 
 body{
+    background-image: url('../img/zhongzi.jpg');
+    background-repeat:repeat;/*背景重复*/
     background-attachment:fixed;/*固定背景*/
     overflow-x:hidden;/*隐藏左右滚动条*/
 }
@@ -94,9 +96,15 @@ body{
     font-size: 20px;
 }
 
+.wlc_p{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+
+}
+
 .pic{
     position: absolute;
-    
     width: 1200px;
     height: 500px;
     background: white;
@@ -106,7 +114,6 @@ body{
 .left{
     position: absolute;
     top: 560px;
-    
     width: 750px;
     height: auto;
     background: black;
@@ -195,6 +202,45 @@ body{
     text-decoration: underline;
 }
 
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th,td{
+    border: 1px solid #999;
+    text-align: center;
+    padding: 20px 0;
+}
+
+table thead tr{
+    background-color: #008c8c;
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+table tbody tr:hover{
+    background-color: #ccc;
+}
+
+table tbody tr td:first-child{
+    color: #f40;
+}
+
+table tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+
 #main{
     position: absolute;
     top: 60px;
@@ -203,9 +249,153 @@ body{
     border: 1px;
     background-color: white;
 }
+
 #main h1,h2,p{
     padding-left: 5px;
 }
 #main h1{
     text-align: center;
 }
+
+
+.card-body p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-body button{
+    margin: 10px 30px;
+    background-color: #A7A7A7;
+    border: none;
+    color: rgb(34, 34, 34);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+
+.card-body input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    font-size: 20px;
+    background-color: #F7f7f7;
+    text-align: center;
+}
+
+.card-body select {
+    width: 20%;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    margin: 8px 20px;
+    border-radius: 4px;
+    background-color: #F7F7F7;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card-body input{
+    background-color: #F7F7F7;
+    border: 2px solid #ccc;
+    color: #333;
+    padding: 10px 20px;
+    margin: 8px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card-body textarea{
+    width: 80%;
+    height: 500px;
+    padding: 10px 20px;
+    margin: 8px 10%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #F7f7f7;
+    font-size: 18px;
+    resize: none;
+}
+
+/*
+ * 为所以图片设置同main一样宽高不大推荐
+    因为，如果图片没进行过处理，强制改变宽高，容易产生变形，
+    图片将变得难看。
+ * *//*为了使图片叠加所以我们使用absolute，在此之前
+ *  我们需要去它的父级添加一个relative。
+ * */
+.banner-slide{
+    position: absolute;
+    width: 1200px;
+    height: 600px; 
+    overflow: hidden;/*防止图片过大，超出范围，影响视觉*/
+    display:none;
+}
+.slide-active{
+    display: block;
+}
+/*
+ * 挨个设置轮播图的图片
+ * 为了方便在图片所在div加内容，标签
+ * 我们选择把轮播图内容以background形式出现。
+ */
+.slide1{
+    background: red;
+}
+.slide2{
+    background: yellow;
+}
+.slide3{
+    background: blue;
+}
+.slide4{
+    background: green;
+}
+.slide5{
+    background: deepskyblue;
+}
+/*ul标签的移动*/
+.dots #dots{
+    position: absolute;
+    margin-top: 560px;/*由于我设置了li高为40，总高600，所以进行
+    560的移动*/
+    margin-left: 275px;/*(1200-5*130)/2*/
+}
+.dots #dots li{
+    height: 40px;
+    width: 80px;
+    border-radius: 20%;
+    background: gray;/*在此的样式根据个人喜好自己添加*/
+    /*由于上面的定位，所以*/
+    float: left;/*为了是图标自左向右*/
+    margin-left: 50px;
+    list-style: none;
+}
+.dots #dots .li1{
+    background: blue;
+}
+#left-right .move{
+    position: absolute;
+    margin-top:260px;
+    height: 80px;
+    width: 40px;
+    font-size: 50px;/*设置<>大小*/
+    padding-left: 10px ;
+}
+/*左右分离*/
+#left-right #next{
+    right:0;
+}
+/*触碰上下张有效果*/
+#left-right .move:hover{
+    background: rgba(0,0,0,0.4);
+}
+
+

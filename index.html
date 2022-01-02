@@ -1,121 +1,121 @@
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8"/>
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<title>首页</title>
-			<link rel="stylesheet" type="text/css" href="./css/main.css">
-	    <script type="text/javascript" src="js/jquery.js"></script>    
-	    <script type="text/javascript" src='js/ejs.js'></script>
-	    <script type="text/javascript" src='js/director.js'></script>
-	    <script type="text/javascript" src='js/main.js'></script>
-	    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-	    <script src="js/createtable_manager.js"></script>
-	    <link rel="stylesheet" type="text/css" href="./css/table.css">
-		</head>
-		<body>
-			<div class="logo">
-				<div class="logo1"><img src="./img/logo.png" height="100px" width="650px"></div>
-				<div class="logo2"><img src="./img/motto.png" height="60px" width="400px"></div>
-			</div>
-			<div style="clear:both;"></div>
-			<div class="whole">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>买车网</title>
+    <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <link rel="stylesheet" type="text/css" href="./css/plugin1.css">  
+        <script type="text/javascript" src='scripts/ejs.js'></script>
+        <script type="text/javascript" src='scripts/director.js'></script>
+        <script type="text/javascript" src='scripts/main.js'></script>
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        
+        <script type="text/javascript" src='scripts/check_cookie.js'></script>
+    <style>
+        @font-face {
+          font-family: 'webfont';
+          font-display: swap;
+          src: url('//at.alicdn.com/t/webfont_pstkyrqd8tg.eot'); /* IE9*/
+          src: url('//at.alicdn.com/t/webfont_pstkyrqd8tg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('//at.alicdn.com/t/webfont_pstkyrqd8tg.woff2') format('woff2'),
+          url('//at.alicdn.com/t/webfont_pstkyrqd8tg.woff') format('woff'), /* chrome、firefox */
+          url('//at.alicdn.com/t/webfont_pstkyrqd8tg.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+          url('//at.alicdn.com/t/webfont_pstkyrqd8tg.svg#杨任东竹石体-Bold') format('svg'); /* iOS 4.1- */
+        }
+        .web-font {
+            font-family: "webfont" !important;
+            font-size: 40px;
+            font-style: normal;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body>
+            <div class="logo">
+                <div class="logo1"><img src="./img/logo.png" height="100px" width="650px"></div>
+                <div class="logo2"><img src="./img/motto.png" height="60px" width="400px"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="whole">
 
 
-				
-				<div class="top" id="test"></div>
-				<script type="text/javascript">
-					$.get("./tpl/navigation.tpl", function(result){      
-		      $("#test").html(result);
-					});
-				</script>
+                
+                <div class="top" id="navigation"></div>
+                <script type="text/javascript">
+                    $.get("./tpl/navigation.tpl", function(result){      
+                    $("#navigation").html(result);
+                    });
+                </script>
+
+                <div id="main"></div>
+                
+                <div class="down">
+                </div>
+            </div>
+</body>
+<script type="text/javascript">
+    var routes = {
+        '/': home,
+        '/index': index,
+        '/table': table,
+        '/manager': manager,
+        '/new': new_m,
+        '/manager/:id': manager_show,
+        '/edit/:id': edit,
+        '/chart': chart,
+    };
+
+    var router = Router(routes).configure({
+        strict: false
+    });
+    router.init();
 
 
+    //  `index.html#/posts/2`这样的客户端路由被分享或收藏时，也会触发载入首页，导致home()被执行 ，此处排除这种状况
+    if (location.hash == '') {
+        home()
+    }
+
+    function home() {
+        index()
+    }
+
+    function index() {
+        renderTemplate_s('#main', 'index');
+    }
+
+    function table() {
+        renderTemplate_s('#main', 'table');
+    }
+
+    function manager() {
+        renderTemplate_s('#main', 'manager');
+    }
+
+    function new_m() {
+        renderTemplate_s('#main', 'new');
+    }
+
+    function manager_show(id) {
+        renderTemplate_m('#main', 'manager_detail', id);
+    }
+
+    function edit(id) {
+        renderTemplate_m('#main', 'edit', id);
+    }
+
+    function chart() {
+        renderTemplate_s('#main', 'chart');
+    }
 
 
+    function notfound() {
+        alert('404')
+    }
+</script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				<div id="main"></div>
-				<script type="text/javascript">
-				    var routes = {
-				        '/': home,
-				        '/index': index,
-				        '/table': table,
-				        '/manager': manager,
-				        '/new': new_m,
-				        '/manager/:id': manager_show,
-				        '/edit/:id': edit,
-				        '/chart': chart,
-				    };
-
-				    var router = Router(routes).configure({
-				        strict: false
-				    });
-				    router.init();
-
-
-				    //  `index.html#/posts/2`这样的客户端路由被分享或收藏时，也会触发载入首页，导致home()被执行 ，此处排除这种状况
-				    if (location.hash == '') {
-				        home()
-				    }
-
-				    function home() {
-				        index()
-				    }
-
-				    function index() {
-				        renderTemplate_s('#main', 'index');
-				    }
-
-				    function table() {
-				        renderTemplate_s('#main', 'table');
-				    }
-
-				    function manager() {
-				        renderTemplate_s('#main', 'manager');
-				    }
-
-				    function new_m() {
-				        renderTemplate_s('#main', 'new');
-				    }
-
-				    function manager_show(id) {
-				        renderTemplate_m('#main', 'manager_detail', id);
-				    }
-
-				    function edit(id) {
-				        renderTemplate_m('#main', 'edit', id);
-				    }
-
-				    function chart() {
-				        renderTemplate_s('#main', 'chart');
-				    }
-
-
-				    function notfound() {
-				        alert('404')
-				    }
-				</script>
-				<div class="down">
-				</div>
-			</div>
-		</body>
-	</html>
+</html>
